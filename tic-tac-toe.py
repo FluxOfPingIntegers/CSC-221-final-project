@@ -3,6 +3,8 @@
 from Board import Board
 
 board = Board()
+welcome_message = '---Welcome To Tic Tac Toe---'
+print(welcome_message)
 
 while board.game:
     board.disp_board()
@@ -14,6 +16,8 @@ while board.game:
         if board.game == False:
             new_game_input = input("Would you like to play another game?  (enter 'y' for yes): ")
             board.game = (new_game_input == 'y')
+            if board.game:
+                print(welcome_message)
             board.clear_board()
 
     elif user_input == 'q':
