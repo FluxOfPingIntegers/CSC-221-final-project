@@ -4,15 +4,19 @@ from Board import Board
 
 board = Board()
 game = True
-selections = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+board.disp_board()
 
 while game:
-    board.disp_board()
     user_input = input("Please enter numbered space for X token (enter 'q' for quit): ")
 
-    if user_input in selections:
+    if user_input in board.selections:
         print(f'player selects space {user_input}')
-        # need movement method for board
+        board.selections.remove(user_input)
+        board.apply_token(user_input)
+        comp_move = board.comp_move(board.selections)
+        board.selections.remove(comp_move)
+        print(f'computer selects space {comp_move}')
+        board.disp_board()
     elif user_input == 'q':
         game = False
     else:
