@@ -18,6 +18,8 @@ while board.game:
             board.game = (new_game_input == 'y')
             if board.game:
                 print(welcome_message)
+            else:
+                print("Thanks for playing!")
             board.clear_board()
 
     elif user_input == 'q':
