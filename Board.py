@@ -35,7 +35,6 @@ class Board:
            selection = random.choice(selections)
            self.apply_token(selection, 'Computer')
     
-    # may need to make this method private
     def check_game_status(self, player, selection):
         b = self.board
         num = selection

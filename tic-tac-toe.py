@@ -24,5 +24,6 @@ while board.game:
 
     elif user_input == 'q':
         board.game = False
+        print("Thanks for playing!")
     else:
         print('Invalid entry!')
